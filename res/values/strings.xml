@@ -4,4 +4,38 @@
     <string name="hello">Hello World!</string>
     <string name="app_name">YourNameWidget</string>
 
+    <string name="txt_info">"Now you have to add one of the widgets to your homescreen."</string>
+    <string name="txt_info_1">"You will find them in your widgets list."</string>
+    <string name="txt_ok">Ok</string>
+    
+    <string name="txt_configuration_title">Configuration</string>
+    <string name="txt_date_of_birth">DATE OF BIRTH</string>
+    <string name="txt_time_of_birth">TIME OF BIRTH</string>
+    <string name="txt_what_to_show">FORMAT</string>
+    <string name="txt_you_cant_be_so_young">"You can't be so young!"</string>
+    <string name="txt_too_many_selected">Only %1$d checkboxes can be selected</string>
+    
+    <string name="txt_years">YEARS</string>
+    <string name="txt_year">YEAR</string>
+    <string name="txt_days">DAYS</string>
+    <string name="txt_day">DAY</string>
+    <string name="txt_months">MONTHS</string>
+    <string name="txt_month">MONTH</string>
+    <string name="txt_hours">HOURS</string>
+    <string name="txt_hour">HOUR</string>
+    <string name="txt_weeks">WEEKS</string>
+    <string name="txt_week">WEEK</string>
+    
+    <string name="widget_label">Age Widget</string>
+    
+    <string name="format_hours">"%1$d"</string>
+    <string name="format_days">"%1$d"</string>
+    <string name="format_days_hours">"%1$d %2$d"</string>
+    
+    <string-array name="formats">
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
 </resources>

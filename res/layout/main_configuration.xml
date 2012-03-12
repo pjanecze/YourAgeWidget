@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blur_background" >
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="@dimen/config_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/dialog_background"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/configuration_title"
+                style="@android:style/TextAppearance.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/txt_configuration_title"
+                android:textColor="@color/holo_blue_light" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/light_blue" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_date_of_birth" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:weightSum="100">
+
+                    <com.pj.lib.widgets.DateTimeButton
+                        android:id="@+id/btn_date_of_birth"
+                        style="@style/Widget.Holo.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="65"
+                        android:text="@string/txt_date_of_birth" />
+
+                    <com.pj.lib.widgets.DateTimeButton
+                        android:id="@+id/btn_time_of_birth"
+                        style="@style/Widget.Holo.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="35"
+                        android:text="@string/txt_time_of_birth" />
+                </LinearLayout>
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txt_what_to_show" />
+                <!--
+                     <Spinner 
+		            style="@style/Widget.Holo.Spinner"
+		            android:id="@+id/sp_what_to_show"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            />
+                -->
+
+                <CheckBox
+                    android:id="@+id/ch_years"
+                    style="@style/Widget.Checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkboxClicked"
+                    android:text="@string/txt_years" />
+
+                <CheckBox
+                    android:id="@+id/ch_months"
+                    style="@style/Widget.Checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkboxClicked"
+                    android:text="@string/txt_months" />
+
+                <CheckBox
+                    android:id="@+id/ch_weeks"
+                    style="@style/Widget.Checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkboxClicked"
+                    android:text="@string/txt_weeks" />
+
+                <CheckBox
+                    android:id="@+id/ch_days"
+                    style="@style/Widget.Checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkboxClicked"
+                    android:text="@string/txt_days" />
+
+                <CheckBox
+                    android:id="@+id/ch_hours"
+                    style="@style/Widget.Checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkboxClicked"
+                    android:text="@string/txt_hours" />
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/light_blue" />
+
+        <Button
+            android:id="@+id/ok"
+            style="@style/Widget.Holo.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_ok" />
+    </LinearLayout>
+
+</RelativeLayout>

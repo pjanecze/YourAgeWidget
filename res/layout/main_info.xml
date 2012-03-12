@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/blur_background"
+	>
+	<LinearLayout 
+	    android:layout_width="@dimen/info_width"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+	    android:orientation="vertical"
+	    android:background="@color/dialog_background"
+	    android:id="@+id/main_layout"
+	    >
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        >
+	        <ImageView 
+	            android:src="@drawable/ic_launcher"
+	            android:layout_width="35dp"
+	            android:layout_height="35dp"
+	            android:layout_margin="5dp"/>
+	        <TextView 
+	            android:id="@+id/info_title"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="@string/app_name"
+	            style="@android:style/TextAppearance.Medium"
+	            android:layout_gravity="center_vertical"
+	            android:textColor="@color/holo_blue_light"/>
+	    </LinearLayout>
+	    <View 
+	        android:layout_width="match_parent"
+	        android:layout_height="2dp"
+	        android:background="@color/light_blue"/>
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        style="@android:style/TextAppearance.Medium"
+	        android:gravity="center_horizontal"
+	        android:text="@string/txt_info"
+	        android:layout_margin="10dp"/>
+
+	    <!-- <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:layout_marginBottom="10dp"
+	        android:orientation="horizontal"
+	        android:weightSum="100">
+	        <ImageView 
+	            android:src="@drawable/nottynote_list_ori_landscape"
+	            android:layout_width="0dp"
+	            android:layout_weight="60"
+	            android:layout_height="wrap_content"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            android:layout_weight="40"
+	            android:gravity="center_horizontal"
+	            style="@android:style/TextAppearance.Holo.Small"
+            	android:text="@string/label_list"
+	            />
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:layout_marginBottom="10dp"
+	        android:orientation="horizontal"
+	        android:weightSum="100">
+	        <ImageView 
+	            android:src="@drawable/nottynote_stack_ori_landscape"
+	            android:layout_width="0dp"
+	            android:layout_weight="60"
+	            android:layout_height="wrap_content"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            android:layout_weight="40"
+	            android:gravity="center_horizontal"
+	            style="@android:style/TextAppearance.Holo.Small"
+            	android:text="@string/label_stack"
+	            />
+	    </LinearLayout> -->
+
+
+	    
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        style="@android:style/TextAppearance.Medium"
+	        android:gravity="center_horizontal"
+	        android:text="@string/txt_info_1"
+	        android:layout_margin="10dp"/>
+        
+        <View 
+		        android:layout_height="2dp"
+		        android:layout_width="match_parent"
+		        android:background="@color/light_blue"
+		        />
+        
+        <Button
+	            android:id="@+id/ok"
+	            android:layout_height="wrap_content"
+	            android:layout_width="match_parent"
+	            android:text="@string/txt_ok"
+	            style="@style/Widget.Holo.Button.Borderless"
+	            />
+    </LinearLayout>
+
+</RelativeLayout>
