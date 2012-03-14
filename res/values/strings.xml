@@ -26,16 +26,16 @@
     <string name="txt_weeks">WEEKS</string>
     <string name="txt_week">WEEK</string>
     
+    <string name="txt_you_live">YOU LIVE</string>
+    
     <string name="widget_label">Age Widget</string>
     
     <string name="format_hours">"%1$d"</string>
     <string name="format_days">"%1$d"</string>
     <string name="format_days_hours">"%1$d %2$d"</string>
     
-    <string-array name="formats">
-        <item>Hours</item>
-        <item>Days</item>
-        <item>Months</item>
-        <item>Years</item>
+    <string-array name="fragments">
+        <item>Info</item>
+        <item>Config</item>
     </string-array>
 </resources>

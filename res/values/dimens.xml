@@ -3,4 +3,6 @@
     <dimen name="widget_margin">8dp</dimen>
     <dimen name="info_width">280dp</dimen>
     <dimen name="config_width">280dp</dimen>
+    <dimen name="details_width">280dp</dimen>
+    
 </resources>

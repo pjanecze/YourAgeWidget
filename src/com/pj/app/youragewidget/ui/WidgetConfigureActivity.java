@@ -3,6 +3,7 @@ package com.pj.app.youragewidget.ui;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import com.pj.app.youragewidget.Prefs;
 import com.pj.app.youragewidget.R;
 import com.pj.app.youragewidget.WidgetProvider;
 import com.pj.lib.widgets.DateTimeButton;
@@ -51,7 +52,7 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 		
 		setContentView(R.layout.main_configuration);
 		
-		mPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+		mPreferences = Prefs.get(this);
 		widgetWidth = getResources().getInteger(R.integer.widgetWidth);
 		
 		Intent intent = getIntent();

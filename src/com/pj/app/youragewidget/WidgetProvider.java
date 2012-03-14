@@ -22,12 +22,14 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+import com.pj.lib.utils.MetricsTools;
 
 public class WidgetProvider extends AppWidgetProvider{
+	
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
-        SharedPreferences preferences = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences preferences = Prefs.get(context);
         
         // Perform this loop procedure for each App Widget that belongs to this provider
         for (int i=0; i<N; i++) {
@@ -35,12 +37,13 @@ public class WidgetProvider extends AppWidgetProvider{
 
             // Create an Intent to launch ExampleActivity
             Intent intent = new Intent(context, DetailsActivity.class);
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main_widget);
-//            views.setOnClickPendingIntent(R.id.your_age, pendingIntent);
+            views.setOnClickPendingIntent(R.id.widget_container, pendingIntent);
             
             long dateBirth = preferences.getLong("birth_" + appWidgetId, 0);
             int formatSize = preferences.getInt("format_size_" + appWidgetId, 1);
@@ -76,10 +79,37 @@ public class WidgetProvider extends AppWidgetProvider{
 		boolean wasWeeks = false;
 		boolean wasDays = false;
 		
+		int widgetSize = getWidgetSize(context);
+		
+		int bigCharsInCell = context.getResources().getInteger(R.integer.big_chars_in_cell);
+		int mediumCharsInCell = context.getResources().getInteger(R.integer.medium_chars_in_cell);
+		int smallCharsInCell = context.getResources().getInteger(R.integer.small_chars_in_cell);
+		
+		float bigSize = context.getResources().getInteger(R.integer.biggest_num);
+		float mediumSize = context.getResources().getInteger(R.integer.medium_num);
+		float smallSize = context.getResources().getInteger(R.integer.small_num);
+		
+		if(widgetSize > formats.size()) {
+			if(widgetSize == formats.size() + 1) {
+				bigCharsInCell += 2;
+				mediumCharsInCell += 2;
+				smallCharsInCell += 4;
+			} else if(widgetSize == formats.size() + 2) {
+				bigCharsInCell += 7;
+				mediumCharsInCell += 4;
+				smallCharsInCell += 8;
+			} else {
+				bigCharsInCell += 9;
+				mediumCharsInCell += 16;
+				smallCharsInCell += 32;
+			}
+		}
+		
 		for(Integer format : formats) {
 			views.setInt(getSectionIdentifier(context, i), "setVisibility", View.VISIBLE);
 			int yourAge = getYourAge(period, format);
-			views.setTextViewText(getFormatIdentifier(context, i), String.valueOf(yourAge));
+			
+			
 			
 			if(format == WidgetConfigureActivity.YEAR) {
 				if(yourAge <= 1) {
@@ -151,8 +181,31 @@ public class WidgetProvider extends AppWidgetProvider{
 				}
 			}  
 			
+			String yourAgeStr = String.valueOf(yourAge);
+			
+			if(yourAgeStr.length() <= bigCharsInCell) {
+				views.setFloat(getFormatIdentifier(context, i), "setTextSize", MetricsTools.spToPixels(context, bigSize));
+				Log.i("test", "textSize1: " + MetricsTools.spToPixels(context, bigSize) + " " + yourAgeStr);
+			} else if(yourAgeStr.length() <= mediumCharsInCell) {
+				views.setFloat(getFormatIdentifier(context, i), "setTextSize", MetricsTools.spToPixels(context, mediumSize));
+				Log.i("test", "textSize2: " + MetricsTools.spToPixels(context, mediumSize) + " " + yourAgeStr);
+			} else if(yourAgeStr.length() <= smallCharsInCell) {
+				views.setFloat(getFormatIdentifier(context, i), "setTextSize", MetricsTools.spToPixels(context, smallSize));
+				Log.i("test", "textSize3: " + MetricsTools.spToPixels(context, smallSize) + " " + yourAgeStr);
+			} else {
+				views.setFloat(getFormatIdentifier(context, i), "setTextSize", MetricsTools.spToPixels(context, smallSize));
+				Log.i("test", "textSize4: " + MetricsTools.spToPixels(context, smallSize) + " " + yourAgeStr);
+			}
+			
+			
+			
+			views.setTextViewText(getFormatIdentifier(context, i), yourAgeStr);
         	i++;
         }
+	}
+
+	private int getWidgetSize(Context context) {
+		return context.getResources().getInteger(R.integer.widgetWidth);
 	}
 
 	private void hideSections(Context context, RemoteViews views) {
