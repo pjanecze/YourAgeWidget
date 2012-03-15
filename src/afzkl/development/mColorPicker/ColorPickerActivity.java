@@ -16,6 +16,8 @@
 
 package afzkl.development.mColorPicker;
 
+import com.pj.app.youragewidget.R;
+
 import afzkl.development.mColorPicker.views.ColorPanelView;
 import afzkl.development.mColorPicker.views.ColorPickerView;
 import android.app.Activity;

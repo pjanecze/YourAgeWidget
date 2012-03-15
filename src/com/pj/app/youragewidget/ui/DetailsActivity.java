@@ -82,5 +82,15 @@ public class DetailsActivity extends FragmentActivity implements OnItemSelectedL
 	public void onNothingSelected(AdapterView<?> arg0) {
 		//nothing
 	}
+
+
+	public void makeBackgroundTransparent(boolean isTransparent) {
+		View view = findViewById(R.id.main_layout);
+		if(isTransparent) {
+			view.setBackgroundColor(getResources().getColor(R.color.dialog_background_transparent));
+		} else {
+			view.setBackgroundColor(getResources().getColor(R.color.dialog_background));
+		}
+	}
 	
 }

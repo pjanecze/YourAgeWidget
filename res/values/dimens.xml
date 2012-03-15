@@ -4,5 +4,5 @@
     <dimen name="info_width">280dp</dimen>
     <dimen name="config_width">280dp</dimen>
     <dimen name="details_width">280dp</dimen>
-    
+    <dimen name="checkbox_left_padding">50dp</dimen>
 </resources>

@@ -2,5 +2,9 @@
 <resources>
 	<color name="widget_background">#222222</color>
     <color name="dialog_background">#282828</color>
+    <color name="dialog_background_transparent">#50222222</color>
 	<color name="light_blue">#33B5E5</color>
+	<color name="white">@android:color/white</color>
+	<color name="gray">@android:color/darker_gray</color>
+	
 </resources>

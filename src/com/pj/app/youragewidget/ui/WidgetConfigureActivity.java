@@ -134,6 +134,12 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 				i++;
 			}
 			
+			//sets default colors
+			editor.putInt("number_color", getResources().getColor(R.color.holo_blue_light));
+			editor.putInt("number_shadow_color", getResources().getColor(R.color.holo_blue_dark));
+			editor.putInt("text_color", getResources().getColor(R.color.holo_orange_light));
+			editor.putInt("text_shadow_color", getResources().getColor(R.color.holo_orange_dark));
+			
 			editor.commit();
 			
 			Intent intent;

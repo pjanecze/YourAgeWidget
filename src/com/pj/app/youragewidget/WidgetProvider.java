@@ -22,6 +22,8 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+import android.widget.TextView;
+
 import com.pj.lib.utils.MetricsTools;
 
 public class WidgetProvider extends AppWidgetProvider{
@@ -232,15 +234,28 @@ public class WidgetProvider extends AppWidgetProvider{
 		
 	}
 	
-	private int getSectionIdentifier(Context context, int sectionNo) {
+	public static int getSectionIdentifier(Context context, int sectionNo) {
 		return context.getResources().getIdentifier("id/section_" + sectionNo, null, context.getPackageName());
 	}
 	
-	private int getTypeIdentifier(Context context, int sectionNo) {
+	public static int getTypeIdentifier(Context context, int sectionNo) {
 		return context.getResources().getIdentifier("id/type_" + sectionNo, null, context.getPackageName());
 	}
 	
-	private int getFormatIdentifier(Context context, int sectionNo) {
+	public static int getFormatIdentifier(Context context, int sectionNo) {
 		return context.getResources().getIdentifier("id/format_" + sectionNo, null, context.getPackageName());
+	}
+
+	public static void setWidgetColors(Context context,RemoteViews views,
+			SharedPreferences mPrefs) {
+		int numberColor = mPrefs.getInt("number_color", -1);
+		int textColor = mPrefs.getInt("text_color", -1);
+		
+		for (int i = 0; i < 4; i++) {
+			views.setTextColor(getFormatIdentifier(context, i), numberColor);
+			views.setTextColor(getTypeIdentifier(context, i), textColor);
+		}
+
+		
 	}
 }

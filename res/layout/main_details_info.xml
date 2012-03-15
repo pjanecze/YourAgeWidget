@@ -1,134 +1,466 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout 
-        android:layout_height="wrap_content"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
         <TextView
-	        style="@style/greenTextStyle"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/txt_you_live" />
-        <LinearLayout 
+            style="@style/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            >
-            <TextView 
-                android:id="@+id/tv_years"
-                style="@style/formatStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:paddingRight="5dp"
-                />
-            <TextView 
-                android:id="@+id/tv_type_years"
-                style="@style/typeStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_gravity="bottom"
-                android:text="@string/txt_year"/>
-        </LinearLayout>
-        <LinearLayout 
+            android:text="@string/txt_you_live" 
+            android:drawableRight="@drawable/born"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_blue" />
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
-            <TextView 
-                android:id="@+id/tv_months"
-                style="@style/formatStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:gravity="right"/>
-            <TextView 
-                android:id="@+id/tv_type_months"
-                style="@style/typeStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_gravity="bottom"
-                android:text="@string/txt_month"/>
-        </LinearLayout>
-        <LinearLayout 
+            android:stretchColumns="1" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_years"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_years"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_year" />
+                
+                <TextView
+                    android:id="@+id/tv_months"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_months"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_month" />
+            </TableRow>
+
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_weeks"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_weeks"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_week" />
+                <TextView
+                    android:id="@+id/tv_days"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_days"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_day" />
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_hours"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_hours"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_hour" />
+            </TableRow>
+        </TableLayout>
+        
+        <TextView
+            style="@style/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
-            <TextView 
-                android:id="@+id/tv_weeks"
-                style="@style/formatStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:gravity="right"/>
-            <TextView 
-                android:id="@+id/tv_type_weeks"
-                style="@style/typeStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_gravity="bottom"
-                android:text="@string/txt_week"/>
-        </LinearLayout>
-        <LinearLayout 
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_your_birthday_in"
+            android:drawableRight="@drawable/cake" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_blue" />
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
-            <TextView 
-                android:id="@+id/tv_days"
-                style="@style/formatStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:gravity="right"/>
-            <TextView 
-                android:id="@+id/tv_type_days"
-                style="@style/typeStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_gravity="bottom"
-                android:text="@string/txt_day"/>
-        </LinearLayout>
-        <LinearLayout 
+            android:stretchColumns="1" >
+
+            <TableRow>
+                
+                <TextView
+                    android:id="@+id/tv_months_bd"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_months_bd"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_month" />
+                
+                
+                <TextView
+                    android:id="@+id/tv_weeks_bd"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_weeks_bd"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_week" />
+            </TableRow>
+
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_days_bd"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_days_bd"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_day" />
+                
+                <TextView
+                    android:id="@+id/tv_hours_bd"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_hours_bd"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_hour" />
+            </TableRow>
+        </TableLayout>
+        
+        <TextView
+            style="@style/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
-            <TextView 
-                android:id="@+id/tv_hours"
-                style="@style/formatStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:gravity="right"/>
-            <TextView 
-                android:id="@+id/tv_type_hours"
-                style="@style/typeStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:layout_gravity="bottom"
-                android:text="@string/txt_hour"/>
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_need_to_be_oldest"
+            android:drawableRight="@drawable/old_man" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_blue" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_years_om"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_years_om"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_year" />
+                <TextView
+                    android:id="@+id/tv_days_om"
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_type_days_om"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_day" />
+            </TableRow>
+
+        </TableLayout>
+        
+        <TextView
+            style="@style/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_facts"
+            android:drawableRight="@drawable/facts" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_blue" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:stretchColumns="1" >
+
+            <TableRow>
+				<TextView
+				    style="@android:style/TextAppearance.Small"
+				    android:textColor="@android:color/white"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="@string/oldest_person_was"
+				    android:gravity="center_horizontal"
+				    />
+            </TableRow>
+            
+            <TableRow >
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="122" />
+
+                <TextView
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_years" />
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" 
+                    android:text="164"/>
+
+                <TextView
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_days" />
+            </TableRow>
+
+            <TableRow>
+				<TextView
+				    style="@android:style/TextAppearance.Small"
+				    android:textColor="@android:color/white"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="@string/average_age_man"
+				    android:gravity="center_horizontal"
+				    android:paddingTop="5dp"
+				    />
+            </TableRow>
+            
+            <TableRow >
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="34" />
+
+                <TextView
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_years" />
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" 
+                    android:text="190"/>
+
+                <TextView
+                    android:id="@+id/tv_type_days_om"
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_days" />
+            </TableRow>
+            <TableRow>
+				<TextView
+				    style="@android:style/TextAppearance.Small"
+				    android:textColor="@android:color/white"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="@string/average_age_women"
+				    android:gravity="center_horizontal"
+				    android:paddingTop="5dp"
+				    />
+            </TableRow>
+            
+            <TableRow >
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="38" />
+
+                <TextView
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_years" />
+                <TextView
+                    style="@style/formatInfoStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="5dp" 
+                    android:text="179"/>
+
+                <TextView
+                    style="@style/typeStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/txt_days" />
+            </TableRow>
+        </TableLayout>
+        
+        
     </LinearLayout>
 
 </ScrollView>

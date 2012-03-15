@@ -12,7 +12,7 @@
         android:background="@color/dialog_background"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -21,9 +21,11 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_launcher" />
 
-            <TextView
+           <!--  <TextView
                 android:id="@+id/details_title"
                 style="@android:style/TextAppearance.Medium"
                 android:layout_width="0dp"
@@ -31,14 +33,15 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="@string/txt_configuration_title"
-                android:textColor="@color/holo_blue_light" />
+                android:textColor="@color/holo_blue_light" /> -->
             <Spinner 
                 android:id="@+id/sp_fragments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                style="@style/Widget.Holo.Spinner"/>
-        </LinearLayout>
+                style="@style/Widget.Holo.Spinner"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"

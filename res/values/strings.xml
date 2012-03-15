@@ -14,6 +14,9 @@
     <string name="txt_what_to_show">FORMAT</string>
     <string name="txt_you_cant_be_so_young">"You can't be so young!"</string>
     <string name="txt_too_many_selected">Only %1$d checkboxes can be selected</string>
+    <string name="txt_make_background_transparent">Make background transparent</string>
+    
+    <string name="txt_widget_settings">WIDGET SETTINGS</string>
     
     <string name="txt_years">YEARS</string>
     <string name="txt_year">YEAR</string>
@@ -27,8 +30,24 @@
     <string name="txt_week">WEEK</string>
     
     <string name="txt_you_live">YOU LIVE</string>
+    <string name="txt_your_birthday_in">TIME TO YOUR BIRTHDAYS</string>
+    <string name="txt_need_to_be_oldest">TIME TO BE THE OLDEST MAN</string>
+    <string name="txt_facts">FACTS</string>
+    
+    <string name="oldest_person_was">The oldest person was Jeanne Calment and she lived for</string>
+    <string name="average_age_man">The average age for man is</string>
+    <string name="average_age_women">The average age for women is</string>
     
     <string name="widget_label">Age Widget</string>
+    
+    <string name="txt_numbers_colors">Numbers color</string>
+    <string name="txt_numbers_shadow_colors">Numbers shadow color</string>
+    
+    <string name="txt_texts_colors">Texts color</string>
+    <string name="txt_texts_shadow_colors">Texts shadow color</string>
+    
+    <string name="txt_set">Set</string>
+    <string name="txt_cancel">Cancel</string>
     
     <string name="format_hours">"%1$d"</string>
     <string name="format_days">"%1$d"</string>

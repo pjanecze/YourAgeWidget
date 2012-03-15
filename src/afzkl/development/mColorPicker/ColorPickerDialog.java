@@ -16,6 +16,8 @@
 
 package afzkl.development.mColorPicker;
 
+import com.pj.app.youragewidget.R;
+
 import afzkl.development.mColorPicker.views.ColorPanelView;
 import afzkl.development.mColorPicker.views.ColorPickerView;
 import afzkl.development.mColorPicker.views.ColorPickerView.OnColorChangedListener;
@@ -36,7 +38,7 @@ public class ColorPickerDialog extends AlertDialog implements
 
 	private OnColorChangedListener mListener;
 
-	protected ColorPickerDialog(Context context, int initialColor) {
+	public ColorPickerDialog(Context context, int initialColor) {
 		super(context);
 
 		init(initialColor);
