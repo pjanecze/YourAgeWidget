@@ -1,5 +1,7 @@
 package com.pj.app.youragewidget.ui;
 
+import android.appwidget.AppWidgetManager;
+import android.util.Log;
 import com.pj.app.youragewidget.R;
 
 import android.os.Bundle;
@@ -27,6 +29,9 @@ public class DetailsActivity extends FragmentActivity implements OnItemSelectedL
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+        Log.i("test", "widget: " + getIntent().getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, 0) + " sis: " + (savedInstanceState == null));
+
 		setContentView(R.layout.main_details);
 		
 		btnOk = (Button) findViewById(R.id.ok);
@@ -62,6 +67,7 @@ public class DetailsActivity extends FragmentActivity implements OnItemSelectedL
 	@Override
 	public void onClick(View v) {
 		finish();
+        moveTaskToBack(true);
 	}
 
 	@Override

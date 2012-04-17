@@ -1,91 +1,402 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical" >
-
-        <CheckBox
-            android:id="@+id/ch_make_background_transparent"
-            style="@style/Widget.Checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/txt_make_background_transparent" />
+            android:padding="10dp"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/txt_make_background_transparent"/>
+
+            <CheckBox
+                    android:id="@+id/ch_make_background_transparent"
+                    style="@style/Widget.Holo.Checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
 
         <TextView
-            style="@style/subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:drawableRight="@drawable/edit"
-            android:text="@string/txt_widget_settings" />
+                style="@style/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@drawable/edit"
+                android:text="@string/txt_widget_text_settings"/>
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/light_blue" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_blue"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
-
-            <FrameLayout
-                android:id="@+id/fl_txt_color"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp" >
-
-                <Button
-                    android:id="@+id/btn_txt_color"
-                    style="@style/Widget.Holo.Button.Borderless"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
             <TextView
-                style="@android:style/TextAppearance.Small"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="@string/txt_texts_colors"
-                android:textColor="@android:color/white" />
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/txt_texts_colors"
+                    android:textColor="@android:color/white"/>
+
+            <FrameLayout
+                    android:id="@+id/fl_txt_color"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp">
+
+                <Button
+                        android:id="@+id/btn_txt_color"
+                        style="@style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
-
-            <FrameLayout
-                android:id="@+id/fl_number_color"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp" >
-
-                <Button
-                    android:id="@+id/btn_number_color"
-                    style="@style/Widget.Holo.Button.Borderless"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
             <TextView
-                style="@android:style/TextAppearance.Small"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/txt_numbers_colors"
+                    android:textColor="@android:color/white"/>
+
+            <FrameLayout
+                    android:id="@+id/fl_number_color"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp">
+
+                <Button
+                        android:id="@+id/btn_number_color"
+                        style="@style/Widget.Holo.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+                style="@style/subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@drawable/edit"
+                android:text="@string/txt_widget_background_settings"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_blue"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="@string/txt_numbers_colors"
-                android:textColor="@android:color/white" />
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/txt_is_gradient"/>
+
+            <CheckBox
+                    android:id="@+id/ch_is_gradient"
+                    style="@style/Widget.Holo.Checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
         </LinearLayout>
+
+        <ViewAnimator
+                android:id="@+id/background_animator"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inAnimation="@anim/slide_down"
+                android:outAnimation="@anim/slide_up"
+                android:layout_marginTop="10dp"
+                android:animateFirstView="false">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/subsettings_container">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="@string/txt_orientation"/>
+
+                    <Spinner
+                            android:id="@+id/sp_orientation"
+                            style="@style/Widget.Holo.Spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="@string/txt_start_color"/>
+
+                    <FrameLayout
+                            android:id="@+id/fl_start_color"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="5dp">
+
+                        <Button
+                                android:id="@+id/btn_start_color"
+                                style="@style/Widget.Holo.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="@string/txt_middle_color"/>
+
+                    <FrameLayout
+                            android:id="@+id/fl_middle_color"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="5dp">
+
+                        <Button
+                                android:id="@+id/btn_middle_color"
+                                style="@style/Widget.Holo.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="@string/txt_end_color"/>
+
+                    <FrameLayout
+                            android:id="@+id/fl_end_color"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="5dp">
+
+                        <Button
+                                android:id="@+id/btn_end_color"
+                                style="@style/Widget.Holo.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+
+                    android:orientation="horizontal"
+                    android:background="@drawable/subsettings_container">
+
+                <TextView
+                        style="@style/TextAppearance.Small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/txt_color"/>
+
+                <FrameLayout
+                        android:id="@+id/fl_background_color"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp">
+
+                    <Button
+                            android:id="@+id/btn_background_color"
+                            style="@style/Widget.Holo.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                </FrameLayout>
+            </LinearLayout>
+        </ViewAnimator>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    style="@style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:text="@string/txt_with_border"/>
+
+            <CheckBox
+                    android:id="@+id/ch_with_border"
+                    style="@style/Widget.Holo.Checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <ViewAnimator
+                android:id="@+id/border_animator"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inAnimation="@anim/slide_down"
+                android:outAnimation="@anim/slide_up"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:animateFirstView="false">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/subsettings_container">
+                <LinearLayout
+                        android:id="@+id/container_border_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="@string/txt_border_color"/>
+
+                    <FrameLayout
+                            android:id="@+id/fl_border_color"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="5dp">
+
+                        <Button
+                                android:id="@+id/btn_border_color"
+                                style="@style/Widget.Holo.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            style="@style/TextAppearance.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="@string/txt_with_corner"/>
+
+                    <CheckBox
+                            android:id="@+id/ch_with_corner"
+                            style="@style/Widget.Holo.Light.Checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_height="0dp"
+                  android:layout_width="0dp"/>
+        </ViewAnimator>
     </LinearLayout>
 
 </ScrollView>

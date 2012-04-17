@@ -3,6 +3,11 @@ package com.pj.app.youragewidget;
 import java.util.ArrayList;
 import java.util.Date;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Hours;
@@ -26,8 +31,9 @@ import android.widget.TextView;
 
 import com.pj.lib.utils.MetricsTools;
 
-public class WidgetProvider extends AppWidgetProvider{
-	
+public abstract class WidgetProvider extends AppWidgetProvider{
+
+    private static int request = 0;
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
@@ -40,8 +46,7 @@ public class WidgetProvider extends AppWidgetProvider{
             // Create an Intent to launch ExampleActivity
             Intent intent = new Intent(context, DetailsActivity.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, request++, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main_widget);
@@ -49,7 +54,8 @@ public class WidgetProvider extends AppWidgetProvider{
             
             long dateBirth = preferences.getLong("birth_" + appWidgetId, 0);
             int formatSize = preferences.getInt("format_size_" + appWidgetId, 1);
-            
+
+
             ArrayList<Integer> formats = new ArrayList<Integer>();
             for(int k = 0; k < formatSize; k++) {
             	formats.add(preferences.getInt("format_" + k + "_" + appWidgetId, -1));
@@ -60,7 +66,7 @@ public class WidgetProvider extends AppWidgetProvider{
             
             setSections(context,views, formats, dateBirth);
             
-            
+            setWidgetColors(context, views, preferences, appWidgetId, preferences.getInt("widget_size_" + appWidgetId,1));
             
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -81,7 +87,7 @@ public class WidgetProvider extends AppWidgetProvider{
 		boolean wasWeeks = false;
 		boolean wasDays = false;
 		
-		int widgetSize = getWidgetSize(context);
+		int widgetSize = getWidgetSize();
 		
 		int bigCharsInCell = context.getResources().getInteger(R.integer.big_chars_in_cell);
 		int mediumCharsInCell = context.getResources().getInteger(R.integer.medium_chars_in_cell);
@@ -206,9 +212,7 @@ public class WidgetProvider extends AppWidgetProvider{
         }
 	}
 
-	private int getWidgetSize(Context context) {
-		return context.getResources().getInteger(R.integer.widgetWidth);
-	}
+	abstract int getWidgetSize();
 
 	private void hideSections(Context context, RemoteViews views) {
 		for (int i = 0; i < 4; i++) {
@@ -247,15 +251,100 @@ public class WidgetProvider extends AppWidgetProvider{
 	}
 
 	public static void setWidgetColors(Context context,RemoteViews views,
-			SharedPreferences mPrefs) {
-		int numberColor = mPrefs.getInt("number_color", -1);
-		int textColor = mPrefs.getInt("text_color", -1);
-		
+			SharedPreferences mPrefs, int appWidgetId, int widgetSize) {
+        int numberColor = Prefs.getInt(mPrefs,Prefs.NUMBER_COLOR, appWidgetId);
+		int textColor = Prefs.getInt(mPrefs,Prefs.TEXT_COLOR, appWidgetId);
 		for (int i = 0; i < 4; i++) {
 			views.setTextColor(getFormatIdentifier(context, i), numberColor);
 			views.setTextColor(getTypeIdentifier(context, i), textColor);
 		}
 
+        boolean withBorder = mPrefs.getBoolean(Prefs.WITH_BORDER+ appWidgetId, false);
+        boolean withCorner = mPrefs.getBoolean(Prefs.WITH_CORNER+ appWidgetId, false);
+
+        boolean isGradient = mPrefs.getBoolean(Prefs.IS_GRADIENT+ appWidgetId, false);
+
+        int startColor;
+        int middleColor;
+        int endColor;
+
+        int borderColor = Prefs.getInt(mPrefs, Prefs.BORDER_COLOR, appWidgetId);
+
+        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
+        if(isGradient) {
+            startColor = Prefs.getInt(mPrefs, Prefs.START_COLOR, appWidgetId);
+            middleColor = Prefs.getInt(mPrefs, Prefs.MIDDLE_COLOR, appWidgetId);
+            endColor = Prefs.getInt(mPrefs, Prefs.END_COLOR, appWidgetId);
+            int gradientType = Prefs.getInt(mPrefs, Prefs.GRADIENT_TYPE, appWidgetId);
+
+            switch (gradientType) {
+                case 0:
+                    orientation = GradientDrawable.Orientation.TOP_BOTTOM;
+                    break;
+                case 1:
+                    orientation = GradientDrawable.Orientation.BOTTOM_TOP;
+                    break;
+                case 2:
+                    orientation = GradientDrawable.Orientation.LEFT_RIGHT;
+                    break;
+                case 3:
+                    orientation = GradientDrawable.Orientation.RIGHT_LEFT;
+                    break;
+            }
+        } else {
+            int color = Prefs.getInt(mPrefs, Prefs.BACKGROUND_COLOR, appWidgetId);
+            startColor = color;
+            middleColor = color;
+            endColor = color;
+        }
+
+
+        int borderWidth = 0;
+        if(withBorder) {
+            borderWidth = 4;
+        }
+
+        int cornerRadius = 0;
+        if(withCorner) {
+            cornerRadius = 4;
+        }
+
+        Drawable drawable = Tools.getShapeDrawable(new int[]{startColor, middleColor, endColor},
+                orientation,
+                borderColor,
+                borderWidth,
+                cornerRadius);
+
+
+        Bitmap bmp;
+
+        switch (widgetSize) {
+            case 1:
+                bmp = Bitmap.createBitmap(context.getResources().getInteger(R.integer.bitmap_width_1),
+                        context.getResources().getInteger(R.integer.bitmap_height_1), Bitmap.Config.ARGB_8888);
+                break;
+            case 2:
+                bmp = Bitmap.createBitmap(context.getResources().getInteger(R.integer.bitmap_width_2),
+                        context.getResources().getInteger(R.integer.bitmap_height_2), Bitmap.Config.ARGB_8888);
+                break;
+            case 3:
+                bmp = Bitmap.createBitmap(context.getResources().getInteger(R.integer.bitmap_width_3),
+                        context.getResources().getInteger(R.integer.bitmap_height_3), Bitmap.Config.ARGB_8888);
+                break;
+            case 4:
+                bmp = Bitmap.createBitmap(context.getResources().getInteger(R.integer.bitmap_width_4),
+                        context.getResources().getInteger(R.integer.bitmap_height_4), Bitmap.Config.ARGB_8888);
+                break;
+            default:
+                bmp = null;
+        }
+
+        Canvas canvas = new Canvas(bmp);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        views.setImageViewBitmap(R.id.background, bmp);
 		
 	}
+    
 }

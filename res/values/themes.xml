@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme" parent="@android:style/Theme.Translucent.NoTitleBar">
-        
+        <item name="android:spinnerItemStyle">@style/SpinnerItemStyle</item>
     </style>
     
     <style name="Theme.MyTheme" parent="@style/Theme">
-        
+
     </style>
    
 </resources>

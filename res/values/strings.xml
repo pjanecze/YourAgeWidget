@@ -16,7 +16,12 @@
     <string name="txt_too_many_selected">Only %1$d checkboxes can be selected</string>
     <string name="txt_make_background_transparent">Make background transparent</string>
     
-    <string name="txt_widget_settings">WIDGET SETTINGS</string>
+    <string name="txt_widget_text_settings">TEXT SETTINGS</string>
+    <string name="txt_widget_background_settings">BACKGROUND SETTINGS</string>
+    <string name="txt_is_gradient">Is gradient</string>
+    <string name="txt_with_border">With border</string>
+    <string name="txt_border_color">Border color</string>
+    <string name="txt_with_corner">With round corner</string>
     
     <string name="txt_years">YEARS</string>
     <string name="txt_year">YEAR</string>
@@ -38,13 +43,22 @@
     <string name="average_age_man">The average age for man is</string>
     <string name="average_age_women">The average age for women is</string>
     
-    <string name="widget_label">Age Widget</string>
+    <string name="widget_label_minimal">Age Widget 1x1</string>
+    <string name="widget_label_small">Age Widget 2x1</string>
+    <string name="widget_label_medium">Age Widget 3x1</string>
+    <string name="widget_label_large">Age Widget 4x1</string>
     
     <string name="txt_numbers_colors">Numbers color</string>
     <string name="txt_numbers_shadow_colors">Numbers shadow color</string>
     
     <string name="txt_texts_colors">Texts color</string>
     <string name="txt_texts_shadow_colors">Texts shadow color</string>
+    
+    <string name="txt_orientation">Orientation</string>
+    <string name="txt_start_color">Start color</string>
+    <string name="txt_middle_color">Middle color</string>
+    <string name="txt_end_color">End color</string>
+    <string name="txt_color">Color</string>
     
     <string name="txt_set">Set</string>
     <string name="txt_cancel">Cancel</string>
@@ -56,5 +70,12 @@
     <string-array name="fragments">
         <item>Info</item>
         <item>Config</item>
+    </string-array>
+    
+    <string-array name="orientations">
+        <item>Top -> Bottom</item>
+        <item>Bottom -> Top</item>
+        <item>Left -> Right</item>
+        <item>Right -> Left</item>
     </string-array>
 </resources>

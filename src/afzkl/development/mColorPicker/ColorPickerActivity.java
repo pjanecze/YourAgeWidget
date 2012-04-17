@@ -95,24 +95,21 @@ public class ColorPickerActivity extends Activity implements
 	@Override
 	public void onClick(View v) {
 
-		switch (v.getId()) {
-		case R.id.ok_button:
+        int i1 = v.getId();
+        if (i1 == R.id.ok_button) {
+            Intent i = new Intent();
+            i.putExtra(RESULT_COLOR, mColorPickerView.getColor());
 
-			Intent i = new Intent();
-			i.putExtra(RESULT_COLOR, mColorPickerView.getColor());
+            setResult(Activity.RESULT_OK, i);
+            finish();
 
-			setResult(Activity.RESULT_OK, i);
-			finish();
 
-			break;
+        } else if (i1 == R.id.cancel_button) {
+            setResult(Activity.RESULT_CANCELED);
+            finish();
 
-		case R.id.cancel_button:
 
-			setResult(Activity.RESULT_CANCELED);
-			finish();
-
-			break;
-		}
+        }
 
 	}
 

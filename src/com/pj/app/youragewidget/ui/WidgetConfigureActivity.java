@@ -3,6 +3,7 @@ package com.pj.app.youragewidget.ui;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import android.util.Log;
 import com.pj.app.youragewidget.Prefs;
 import com.pj.app.youragewidget.R;
 import com.pj.app.youragewidget.WidgetProvider;
@@ -25,7 +26,7 @@ import android.widget.RemoteViews;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class WidgetConfigureActivity extends Activity implements OnClickListener{
+public abstract class WidgetConfigureActivity extends Activity implements OnClickListener{
 
 	public static final int YEAR = 1;
 	public static final int MONTH = 2;
@@ -42,7 +43,6 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 	
 	ArrayList<Integer> mSelectedCheckboxes = new ArrayList<Integer>();
 	
-	private int widgetWidth = 1;
 	
 	SharedPreferences mPreferences;
 	
@@ -53,7 +53,6 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 		setContentView(R.layout.main_configuration);
 		
 		mPreferences = Prefs.get(this);
-		widgetWidth = getResources().getInteger(R.integer.widgetWidth);
 		
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
@@ -93,9 +92,9 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 	}
 	
 	public void checkboxClicked(View v) {
-		if (((CheckBox) v).isChecked() && mSelectedCheckboxes.size() >= widgetWidth) {
+		if (((CheckBox) v).isChecked() && mSelectedCheckboxes.size() >= getWidgetWidth()) {
 			((CheckBox) v).setChecked(false);
-	        Toast.makeText(this, String.format(getString(R.string.txt_too_many_selected), widgetWidth), Toast.LENGTH_SHORT).show();
+	        Toast.makeText(this, String.format(getString(R.string.txt_too_many_selected), getWidgetWidth()), Toast.LENGTH_SHORT).show();
 	    } else {
 			mSelectedCheckboxes.clear();
 			
@@ -128,22 +127,22 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 			editor.putLong("birth", date.getTimeInMillis());
 			editor.putLong("birth_" + mAppWidgetId, date.getTimeInMillis());
 			editor.putInt("format_size_" + mAppWidgetId, mSelectedCheckboxes.size());
+            editor.putInt("widget_size_" + mAppWidgetId, getWidgetWidth());
 			int i = 0;
 			for(Integer format : mSelectedCheckboxes) {
 				editor.putInt("format_" + i + "_" + mAppWidgetId, format);
 				i++;
 			}
-			
+
+            editor.commit();
+
 			//sets default colors
-			editor.putInt("number_color", getResources().getColor(R.color.holo_blue_light));
-			editor.putInt("number_shadow_color", getResources().getColor(R.color.holo_blue_dark));
-			editor.putInt("text_color", getResources().getColor(R.color.holo_orange_light));
-			editor.putInt("text_shadow_color", getResources().getColor(R.color.holo_orange_dark));
+			Prefs.setDefaultValues(this);
 			
-			editor.commit();
+
 			
 			Intent intent;
-			intent = new Intent(this, WidgetProvider.class);
+			intent = new Intent(this, getProviderClass());
 			
 			intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
 			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,new int[] {mAppWidgetId});
@@ -160,5 +159,10 @@ public class WidgetConfigureActivity extends Activity implements OnClickListener
 			finish();
 		}
 	}
-	
+
+    protected abstract Class getProviderClass();
+
+    protected abstract  int getWidgetWidth();
+
+
 }

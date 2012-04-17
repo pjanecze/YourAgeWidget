@@ -1,115 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget_container"
-    android:layout_height="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="@dimen/widget_margin"
-    android:orientation="horizontal"
-    >
-    
+    android:layout_height="match_parent"
+        android:padding="@dimen/widget_margin">
 
-	<RelativeLayout  
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:id="@+id/section_0"
-	    android:layout_margin="5dp"
-	    >
-	    
-		<TextView 
-		    android:id="@+id/format_0"
-		    android:layout_above="@+id/type_0"
-		    android:layout_width="match_parent"
-		    android:layout_height="match_parent"
-		    style="@style/formatStyle"
-		    android:text="246024"
-		    />
-		
-		<TextView 
-		    	android:id="@+id/type_0"
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:layout_alignParentBottom="true"
-		        style="@style/typeStyle"
-		        android:text="DAYS"
-		        />
-	</RelativeLayout>
-	<RelativeLayout  
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:id="@+id/section_1"
-	    android:layout_margin="5dp"
-	    >
-	    
-		<TextView 
-		    android:id="@+id/format_1"
-		    android:layout_above="@+id/type_1"
-		    android:layout_width="match_parent"
-		    android:layout_height="match_parent"
-		    style="@style/formatStyle"
-		    android:text="246024"
-		    />
-		
-		<TextView 
-		    	android:id="@+id/type_1"
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:layout_alignParentBottom="true"
-		        style="@style/typeStyle"
-		        android:text="DAYS"
-		        />
-	</RelativeLayout>
-	<RelativeLayout  
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:id="@+id/section_2"
-	    android:layout_margin="5dp"
-	    >
-	    
-		<TextView 
-		    android:id="@+id/format_2"
-		    android:layout_above="@+id/type_2"
-		    android:layout_width="match_parent"
-		    android:layout_height="match_parent"
-		    style="@style/formatStyle"
-		    android:text="246024"
-		    />
-		
-		<TextView 
-		    	android:id="@+id/type_2"
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:layout_alignParentBottom="true"
-		        style="@style/typeStyle"
-		        android:text="DAYS"
-		        />
-	</RelativeLayout>
-	<RelativeLayout  
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:id="@+id/section_3"
-	    android:layout_margin="5dp"
-	    >
-	    
-		<TextView 
-		    android:id="@+id/format_3"
-		    android:layout_above="@+id/type_3"
-		    android:layout_width="match_parent"
-		    android:layout_height="match_parent"
-		    style="@style/formatStyle"
-		    android:text="246024"
-		    />
-		
-		<TextView 
-		    	android:id="@+id/type_3"
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:layout_alignParentBottom="true"
-		        style="@style/typeStyle"
-		        android:text="DAYS"
-		        />
-	</RelativeLayout>
-</LinearLayout>
+    <ImageView 
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"/>
+    <LinearLayout
+        android:id="@+id/widget_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/section_0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/format_0"
+                style="@style/formatStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/type_0"
+                android:text="246024" />
+
+            <TextView
+                android:id="@+id/type_0"
+                style="@style/typeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="DAYS" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/format_1"
+                style="@style/formatStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/type_1"
+                android:text="246024" />
+
+            <TextView
+                android:id="@+id/type_1"
+                style="@style/typeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="DAYS" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/format_2"
+                style="@style/formatStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/type_2"
+                android:text="246024" />
+
+            <TextView
+                android:id="@+id/type_2"
+                style="@style/typeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="DAYS" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/section_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/format_3"
+                style="@style/formatStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/type_3"
+                android:text="246024" />
+
+            <TextView
+                android:id="@+id/type_3"
+                style="@style/typeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="DAYS" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

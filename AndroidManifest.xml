@@ -8,7 +8,8 @@
 
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+            >
         <activity
             android:name=".ui.InfoActivity"
             android:label="@string/app_name"
@@ -20,21 +21,66 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".WidgetProvider" android:label="@string/widget_label">
+        <receiver android:name=".MinimalWidgetProvider" android:label="@string/widget_label_minimal">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
+                android:resource="@xml/widget_info_minimal" />
         </receiver>
 
-        <activity android:name=".ui.WidgetConfigureActivity" android:theme="@style/Theme.MyTheme">
+        <receiver android:name=".SmallWidgetProvider" android:label="@string/widget_label_small">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_small" />
+        </receiver>
+
+        <receiver android:name=".MediumWidgetProvider" android:label="@string/widget_label_medium">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_medium" />
+        </receiver>
+
+        <receiver android:name=".LargeWidgetProvider" android:label="@string/widget_label_large">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_large" />
+        </receiver>
+
+        <activity android:name=".ui.MinimalConfigureActivity" android:theme="@style/Theme.MyTheme">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
+        <!--<activity android:name=".ui.SmallConfigureActivity" android:theme="@style/Theme.MyTheme">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name=".ui.MediumConfigureActivity" android:theme="@style/Theme.MyTheme">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name=".ui.LargeConfigureActivity" android:theme="@style/Theme.MyTheme">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
         <activity android:name=".ui.DetailsActivity"
             android:theme="@style/Theme.MyTheme"></activity>
     </application>

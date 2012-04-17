@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="widgetWidth" type="integer" format="integer">4</item>
-    
+
     <item name="big_chars_in_cell" type="integer" format="integer">3</item>
     
     <item name="medium_chars_in_cell" type="integer" format="integer">6</item>
     
     <item name="small_chars_in_cell" type="integer" format="integer">8</item>
     
-    <item name="biggest_num" type="integer" format="integer">25</item>
+    <item name="biggest_num" type="integer" format="integer">24</item>
     
-    <item name="medium_num" type="integer" format="integer">19</item>
+    <item name="medium_num" type="integer" format="integer">15</item>
     
     <item name="small_num" type="integer" format="integer">14</item>
+
+    <item type="integer" format="integer" name="bitmap_width_1">190</item>
+    <item type="integer" format="integer" name="bitmap_height_1">250</item>
+
+    <item type="integer" format="integer" name="bitmap_width_2">430</item>
+    <item type="integer" format="integer" name="bitmap_height_2">250</item>
+
+    <item type="integer" format="integer" name="bitmap_width_3">670</item>
+    <item type="integer" format="integer" name="bitmap_height_3">250</item>
+
+    <item type="integer" format="integer" name="bitmap_width_4">900</item>
+    <item type="integer" format="integer" name="bitmap_height_4">250</item>
 </resources>

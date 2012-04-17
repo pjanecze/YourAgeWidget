@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" filepath="$PROJECT_DIR$/../../pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YourAgeWidget.iml" filepath="$PROJECT_DIR$/YourAgeWidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" filepath="$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" />
+    </modules>
+  </component>
+</project>
+

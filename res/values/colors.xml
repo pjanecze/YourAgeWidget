@@ -6,5 +6,16 @@
 	<color name="light_blue">#33B5E5</color>
 	<color name="white">@android:color/white</color>
 	<color name="gray">@android:color/darker_gray</color>
-	
+	<color name="black">@android:color/black</color>
+    <color name="background_holo_light">#ffa3a3a3</color>
+    <color name="background_holo_light_shine">#ffb5b5b5</color>
+
+
+	<color name="default_number">@color/holo_blue_light</color>
+	<color name="default_text">@color/holo_orange_light</color>
+	<color name="default_start">@android:color/transparent</color>
+	<color name="default_middle">@android:color/transparent</color>
+	<color name="default_end">@android:color/transparent</color>
+	<color name="default_background">@android:color/transparent</color>
+	<color name="default_border">@android:color/transparent</color>
 </resources>

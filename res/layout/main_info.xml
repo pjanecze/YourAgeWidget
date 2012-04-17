@@ -6,7 +6,7 @@
 	>
 	<LinearLayout 
 	    android:layout_width="@dimen/info_width"
-		android:layout_height="wrap_content"
+		android:layout_height="@dimen/info_height"
 		android:layout_centerInParent="true"
 	    android:orientation="vertical"
 	    android:background="@color/dialog_background"
@@ -95,7 +95,8 @@
 	    
         <TextView 
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="0dp"
+            android:layout_weight="1"
 	        style="@android:style/TextAppearance.Medium"
 	        android:gravity="center_horizontal"
 	        android:text="@string/txt_info_1"

@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/main_layout"
         android:layout_width="@dimen/details_width"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/details_height"
         android:layout_centerInParent="true"
         android:background="@color/dialog_background"
         android:orientation="vertical" >
@@ -36,7 +36,7 @@
                 android:textColor="@color/holo_blue_light" /> -->
             <Spinner 
                 android:id="@+id/sp_fragments"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Holo.Spinner"
                 android:layout_centerVertical="true"
