@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="info_width">400dp</dimen>
-    <dimen name="info_height">500dp</dimen>
+    <dimen name="info_height">320dp</dimen>
     <dimen name="config_width">400dp</dimen>
     <dimen name="details_width">400dp</dimen>
     <dimen name="details_height">600dp</dimen>

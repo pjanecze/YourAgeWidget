@@ -12,7 +12,7 @@
         android:background="@color/dialog_background"
         android:orientation="vertical" >
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -25,23 +25,23 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_launcher" />
 
-           <!--  <TextView
+           <TextView
                 android:id="@+id/details_title"
                 style="@android:style/TextAppearance.Medium"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="@string/txt_configuration_title"
-                android:textColor="@color/holo_blue_light" /> -->
+                android:text="@string/app_name_lib"
+                android:textColor="@color/holo_blue_light" />
             <Spinner 
                 android:id="@+id/sp_fragments"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Holo.Spinner"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
                 android:layout_alignParentRight="true"/>
-        </RelativeLayout>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

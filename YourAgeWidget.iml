@@ -38,7 +38,7 @@
     <orderEntry type="jdk" jdkName="Android 3.1 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="module" module-name="ErrorHandlerLib" />
+    <orderEntry type="module" module-name="pj_lib" />
   </component>
 </module>
 

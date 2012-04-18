@@ -1,3 +1,9 @@
 <resources>
     <item name="big_chars_in_cell" type="integer" format="integer">2</item>
+
+    <item name="biggest_num" type="integer" format="integer">22</item>
+
+    <item name="medium_num" type="integer" format="integer">12</item>
+
+    <item name="small_num" type="integer" format="integer">12</item>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="typeFontSize">14sp</dimen>
 
     <item name="big_chars_in_cell" type="integer" format="integer">3</item>
     

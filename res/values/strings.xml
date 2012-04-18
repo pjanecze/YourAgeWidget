@@ -3,6 +3,7 @@
 
     <string name="hello">Hello World!</string>
     <string name="app_name">YourNameWidget</string>
+    <string name="app_name_lib">YOUR AGE</string>
 
     <string name="txt_info">"Now you have to add one of the widgets to your homescreen."</string>
     <string name="txt_info_1">"You will find them in your widgets list."</string>
@@ -66,6 +67,7 @@
     <string name="format_hours">"%1$d"</string>
     <string name="format_days">"%1$d"</string>
     <string name="format_days_hours">"%1$d %2$d"</string>
+
     
     <string-array name="fragments">
         <item>Info</item>

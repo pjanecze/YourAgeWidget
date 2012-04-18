@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="typeFontSize">12sp</dimen>
+    <item name="biggest_num" type="integer" format="integer">30</item>
+    <item name="medium_num" type="integer" format="integer">25</item>
+</resources>

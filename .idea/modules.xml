@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" filepath="$PROJECT_DIR$/../../pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" />
+      <module fileurl="file://C:/pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" filepath="C:/pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidget.iml" filepath="$PROJECT_DIR$/YourAgeWidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" filepath="$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pj-utils/ErrorHandlerLib/pj_lib.iml" filepath="$PROJECT_DIR$/../pj-utils/ErrorHandlerLib/pj_lib.iml" />
     </modules>
   </component>
 </project>

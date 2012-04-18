@@ -136,9 +136,12 @@ public class DetailsSettingsFragment extends Fragment implements
 
 		setFlBackgrounds();
 
+        boolean test = mPrefs.getBoolean(Prefs.WITH_BORDER + mAppWidgetId, mPrefs.getBoolean(Prefs.WITH_BORDER, false));
+
         chIsGradient.setChecked(mPrefs.getBoolean(Prefs.IS_GRADIENT + mAppWidgetId, mPrefs.getBoolean(Prefs.IS_GRADIENT, false)));
-        chWithBorder.setChecked(mPrefs.getBoolean(Prefs.WITH_BORDER + mAppWidgetId, mPrefs.getBoolean(Prefs.WITH_BORDER, false)));
-        chWithCorner.setChecked(mPrefs.getBoolean(Prefs.WITH_CORNER + mAppWidgetId, mPrefs.getBoolean(Prefs.WITH_CORNER, false)));
+        chWithBorder.setChecked(test);
+
+
 
         showHideBorderContainer();
         showHideGradientContainer();
@@ -374,6 +377,8 @@ public class DetailsSettingsFragment extends Fragment implements
         editor.putInt(Prefs.GRADIENT_TYPE+ mAppWidgetId, spOrientation.getSelectedItemPosition());
 		editor.commit();
 
+
+        boolean test = chWithBorder.isChecked();
 	}
 
 	private void setWidgetColors() {

@@ -5,7 +5,9 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/YourAgeWidgetYears/gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/../../pj-utils/ErrorHandlerLib/gen" includeSubdirectories="true" />
+      <directory url="file://C:/pj-utils/ErrorHandlerLib/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetMinimal/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../pj-utils/ErrorHandlerLib/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
