@@ -42,7 +42,8 @@ public abstract class WidgetConfigureActivity extends Activity implements OnClic
 	private int mAppWidgetId;
 	
 	ArrayList<Integer> mSelectedCheckboxes = new ArrayList<Integer>();
-	
+
+    long startTime;
 	
 	SharedPreferences mPreferences;
 	
@@ -69,6 +70,7 @@ public abstract class WidgetConfigureActivity extends Activity implements OnClic
 		btnDateOfBirth = (DateTimeButton) findViewById(R.id.btn_date_of_birth);
 		btnTimeOfBirth = (DateTimeButton) findViewById(R.id.btn_time_of_birth);
 		btnTimeOfBirth.setType(DateTimeButton.TYPE_TIME);
+        startTime = System.currentTimeMillis();
 		
 		if(birth != -1) {
 			Calendar calendar = Calendar.getInstance();
@@ -111,11 +113,18 @@ public abstract class WidgetConfigureActivity extends Activity implements OnClic
 	public void onClick(View v) {
 		if(v == btnOk) {
 
-//			if(now.equals(btnDateOfBirth.getDateTime())) {
-//				Toast.makeText(this, getText(R.string.txt_you_cant_be_so_young), Toast.LENGTH_LONG).show();
-//				return;
-//			} 
-			
+            long buttonTime = btnDateOfBirth.getDateTime().getTimeInMillis();
+
+			if(startTime - 2000  <buttonTime) {
+                Toast.makeText(this, getText(R.string.txt_invalid_birth_date), Toast.LENGTH_LONG).show();
+                return;
+
+            }
+
+            if(mSelectedCheckboxes.size() == 0) {
+                Toast.makeText(this, getText(R.string.txt_invalid_checkboxes), Toast.LENGTH_LONG).show();
+                return;
+            }
 			
 			SharedPreferences.Editor editor = mPreferences.edit();
 			

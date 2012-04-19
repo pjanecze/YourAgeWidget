@@ -13,7 +13,8 @@
     <string name="txt_date_of_birth">DATE OF BIRTH</string>
     <string name="txt_time_of_birth">TIME OF BIRTH</string>
     <string name="txt_what_to_show">FORMAT</string>
-    <string name="txt_you_cant_be_so_young">"You can't be so young!"</string>
+    <string name="txt_invalid_birth_date">"Invalid birth date. Are you from future?"</string>
+    <string name="txt_invalid_checkboxes">"You must check at least one format to proceed."</string>
     <string name="txt_too_many_selected">Only %1$d checkboxes can be selected</string>
     <string name="txt_make_background_transparent">Make background transparent</string>
     
@@ -48,6 +49,7 @@
     <string name="widget_label_small">Age Widget 2x1</string>
     <string name="widget_label_medium">Age Widget 3x1</string>
     <string name="widget_label_large">Age Widget 4x1</string>
+    <string name="widget_label">Age Widget</string>
     
     <string name="txt_numbers_colors">Numbers color</string>
     <string name="txt_numbers_shadow_colors">Numbers shadow color</string>

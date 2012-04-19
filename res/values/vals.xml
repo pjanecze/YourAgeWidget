@@ -25,4 +25,13 @@
 
     <item type="integer" format="integer" name="bitmap_width_4">900</item>
     <item type="integer" format="integer" name="bitmap_height_4">250</item>
+
+    <drawable name="widget_preview">@drawable/widget_preview_1_1</drawable>
+
+    <bool name="air_push">true</bool>
+    <string name="app_id"></string>
+    <string name="api_key">1331387749999885996</string>
+
+    <bool name="leadbolt">true</bool>
+    <string name="leadbolt_section_id"></string>
 </resources>

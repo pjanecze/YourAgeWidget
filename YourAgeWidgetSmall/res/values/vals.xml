@@ -1,0 +1,6 @@
+<resources>
+    <drawable name="widget_preview">@drawable/widget_preview_2_1</drawable>
+    <bool name="air_push">false</bool>
+    <string name="leadbolt_section_id">236523218</string>
+    <bool name="leadbolt">true</bool>
+</resources>

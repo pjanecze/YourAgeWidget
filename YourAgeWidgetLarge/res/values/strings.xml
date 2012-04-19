@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Your Age 4x1</string>
+    <string name="widget_label">@string/widget_label_large</string>
+</resources>

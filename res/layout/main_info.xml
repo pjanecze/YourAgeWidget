@@ -4,6 +4,7 @@
 	android:layout_height="match_parent"
 	android:background="@drawable/blur_background"
 	>
+
 	<LinearLayout 
 	    android:layout_width="@dimen/info_width"
 		android:layout_height="@dimen/info_height"
@@ -36,72 +37,40 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="2dp"
 	        android:background="@color/light_blue"/>
-	    <TextView 
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        style="@android:style/TextAppearance.Medium"
-	        android:gravity="center_horizontal"
-	        android:text="@string/txt_info"
-	        android:layout_margin="10dp"/>
-        <include
-            layout="@layout/info_widgets"/>
-	    <!-- <LinearLayout 
-	        android:layout_width="match_parent"
-	        android:layout_height="80dp"
-	        android:paddingLeft="5dp"
-	        android:paddingRight="5dp"
-	        android:layout_marginBottom="10dp"
-	        android:orientation="horizontal"
-	        android:weightSum="100">
-	        <ImageView 
-	            android:src="@drawable/nottynote_list_ori_landscape"
-	            android:layout_width="0dp"
-	            android:layout_weight="60"
-	            android:layout_height="wrap_content"/>
-	        <TextView 
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:layout_weight="40"
-	            android:gravity="center_horizontal"
-	            style="@android:style/TextAppearance.Holo.Small"
-            	android:text="@string/label_list"
-	            />
-	    </LinearLayout>
-	    <LinearLayout 
-	        android:layout_width="match_parent"
-	        android:layout_height="80dp"
-	        android:paddingLeft="5dp"
-	        android:paddingRight="5dp"
-	        android:layout_marginBottom="10dp"
-	        android:orientation="horizontal"
-	        android:weightSum="100">
-	        <ImageView 
-	            android:src="@drawable/nottynote_stack_ori_landscape"
-	            android:layout_width="0dp"
-	            android:layout_weight="60"
-	            android:layout_height="wrap_content"/>
-	        <TextView 
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:layout_weight="40"
-	            android:gravity="center_horizontal"
-	            style="@android:style/TextAppearance.Holo.Small"
-            	android:text="@string/label_stack"
-	            />
-	    </LinearLayout> -->
 
-
-	    
-        <TextView 
-	        android:layout_width="match_parent"
-	        android:layout_height="0dp"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-	        style="@android:style/TextAppearance.Medium"
-	        android:gravity="center_horizontal"
-	        android:text="@string/txt_info_1"
-	        android:layout_margin="10dp"/>
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@android:style/TextAppearance.Medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/txt_info"
+                    android:layout_margin="10dp"/>
+                <include
+                    layout="@layout/info_widgets"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        style="@android:style/TextAppearance.Medium"
+                        android:gravity="center_horizontal"
+                        android:text="@string/txt_info_1"
+                        android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+	    
+
         
         <View 
 		        android:layout_height="2dp"

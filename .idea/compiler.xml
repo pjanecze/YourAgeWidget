@@ -8,6 +8,10 @@
       <directory url="file://C:/pj-utils/ErrorHandlerLib/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/YourAgeWidgetMinimal/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/../pj-utils/ErrorHandlerLib/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetSmall/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetMedium/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetLarge/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetPremium/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

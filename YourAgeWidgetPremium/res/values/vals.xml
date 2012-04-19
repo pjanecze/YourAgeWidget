@@ -1,0 +1,4 @@
+<resources>
+    <bool name="air_push">false</bool>
+    <bool name="leadbolt">false</bool>
+</resources>

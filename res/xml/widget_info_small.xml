@@ -3,7 +3,7 @@
                     android:minWidth="110dp"
                     android:minHeight="40dp"
                     android:updatePeriodMillis="3600000"
-                    android:previewImage="@drawable/ic_launcher"
+                    android:previewImage="@drawable/widget_preview_2_1"
                     android:initialLayout="@layout/main_widget"
                     android:configure="com.pj.app.youragewidget.ui.SmallConfigureActivity"
                     android:resizeMode="none">
