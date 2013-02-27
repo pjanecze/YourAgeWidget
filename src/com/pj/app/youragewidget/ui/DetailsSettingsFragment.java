@@ -1,13 +1,11 @@
 package com.pj.app.youragewidget.ui;
 
+import android.content.ComponentName;
 import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
-import com.pj.app.youragewidget.Prefs;
-import com.pj.app.youragewidget.R;
-import com.pj.app.youragewidget.Tools;
-import com.pj.app.youragewidget.WidgetProvider;
+import com.pj.app.youragewidget.*;
 
 import afzkl.development.mColorPicker.ColorPickerDialog;
 import afzkl.development.mColorPicker.views.ColorPickerView;
@@ -386,10 +384,34 @@ public class DetailsSettingsFragment extends Fragment implements
 
 		AppWidgetManager appWidgetManager = AppWidgetManager
 				.getInstance(activity);
-		RemoteViews views = new RemoteViews(activity.getPackageName(),
-				R.layout.main_widget);
-		WidgetProvider.setWidgetColors(activity, views, mPrefs, mAppWidgetId, mPrefs.getInt("widget_size_" + mAppWidgetId,1));
-		appWidgetManager.updateAppWidget(mAppWidgetId, views);
+//		RemoteViews views = new RemoteViews(activity.getPackageName(),
+//				R.layout.main_widget);
+//		WidgetProvider.setWidgetColors(activity, views, mPrefs, mAppWidgetId, mPrefs.getInt("widget_size_" + mAppWidgetId,1));
+//		appWidgetManager.updateAppWidget(mAppWidgetId, views);
+        //in your activity
+
+
+        Intent intent = new Intent(WidgetProvider.ACTION_UPDATE);
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, new int[] {mAppWidgetId});
+        activity.sendBroadcast(intent);
+//        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(activity, LargeWidgetProvider.class));
+//        if (appWidgetIds.length > 0) {
+//            new LargeWidgetProvider().onUpdate(activity, appWidgetManager, appWidgetIds);
+//        }
+//        appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(activity, MediumWidgetProvider.class));
+//        if (appWidgetIds.length > 0) {
+//            new MediumWidgetProvider().onUpdate(activity, appWidgetManager, appWidgetIds);
+//        }
+//
+//        appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(activity, MinimalWidgetProvider.class));
+//        if (appWidgetIds.length > 0) {
+//            new MinimalWidgetProvider().onUpdate(activity, appWidgetManager, appWidgetIds);
+//        }
+//
+//        appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(activity, SmallWidgetProvider.class));
+//        if (appWidgetIds.length > 0) {
+//            new SmallWidgetProvider().onUpdate(activity, appWidgetManager, appWidgetIds);
+//        }
 	}
 
     

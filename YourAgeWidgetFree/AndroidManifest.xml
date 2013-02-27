@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.pj.app.youragewidget.free"
+          android:versionCode="1"
+          android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="4"
+              android:targetSdkVersion="11"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Required permissions for all ads. This will apply for all ads. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Additional required permission for push notification. Apply only for push notification ad. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Required permission for Icon Ad. Apply only for icon ad. -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+
+    <application
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            >
+        <activity
+                android:name="com.pj.app.youragewidget.ui.InfoActivity"
+                android:label="@string/app_name"
+                android:theme="@style/Theme.MyTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.pj.app.youragewidget.MinimalWidgetProvider" android:label="@string/widget_label_minimal">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.pj.app.youragewidget.update"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_minimal" />
+        </receiver>
+
+        <receiver android:name="com.pj.app.youragewidget.SmallWidgetProvider" android:label="@string/widget_label_small">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.pj.app.youragewidget.update"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_small" />
+        </receiver>
+
+        <receiver android:name="com.pj.app.youragewidget.MediumWidgetProvider" android:label="@string/widget_label_medium">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.pj.app.youragewidget.update"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_medium" />
+        </receiver>
+
+        <receiver android:name="com.pj.app.youragewidget.LargeWidgetProvider" android:label="@string/widget_label_large">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.pj.app.youragewidget.update"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/widget_info_large" />
+        </receiver>
+
+        <activity android:name="com.pj.app.youragewidget.ui.MinimalConfigureActivity" android:theme="@style/Theme.MyTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.pj.app.youragewidget.ui.SmallConfigureActivity" android:theme="@style/Theme.MyTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.pj.app.youragewidget.ui.MediumConfigureActivity" android:theme="@style/Theme.MyTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.pj.app.youragewidget.ui.LargeConfigureActivity" android:theme="@style/Theme.MyTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.pj.app.youragewidget.ui.DetailsActivity"
+                  android:theme="@style/Theme.MyTheme"></activity>
+
+
+        <!-- Airpush Manifest declaration start -->
+        <!-- Start required declaration for all ads -->
+        <!-- Setup your APPID here. You do not need to change APIKEY declaration. -->
+        <meta-data android:name="com.XXXwuWCk.plBjnrCg99988.APPID" android:value="81483" />
+        <meta-data android:name="com.XXXwuWCk.plBjnrCg99988.APIKEY" android:value="plBjnrCg99988*1346103545999881511"/>
+        <!-- This activity is required for all ads. This activity is also used for Dialog ads. -->
+        <activity android:exported="false" android:name="com.XXXwuWCk.plBjnrCg99988.OptinActivity"
+                  android:configChanges="orientation|keyboardHidden"
+                  android:theme="@android:style/Theme.Translucent" />
+        <!-- End of required declarations for all ads-->
+        <!-- Start declaration for push notification ads. -->
+        <service android:name="com.XXXwuWCk.plBjnrCg99988.PushService" android:exported="false" />
+        <receiver android:name="com.XXXwuWCk.plBjnrCg99988.BootReceiver" android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <!-- End declaration for push notification ads. -->
+        <!-- Required activity for AppWall and Landing page ads. -->
+        <activity android:name="com.XXXwuWCk.plBjnrCg99988.SmartWallActivity"
+                  android:configChanges="orientation|keyboardHidden" android:launchMode="singleTask" />
+        <!-- End of Airpush Manifest declaration-->
+    </application>
+
+
+
+</manifest>

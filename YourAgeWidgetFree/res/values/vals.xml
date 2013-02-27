@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_id">81483</string>
+    <bool name="air_push">true</bool>
+    <bool name="leadbolt">false</bool>
+</resources>

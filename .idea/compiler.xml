@@ -12,6 +12,8 @@
       <directory url="file://$PROJECT_DIR$/YourAgeWidgetMedium/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/YourAgeWidgetLarge/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/YourAgeWidgetPremium/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/../pjutils/ErrorHandlerLib/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/YourAgeWidgetFree/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

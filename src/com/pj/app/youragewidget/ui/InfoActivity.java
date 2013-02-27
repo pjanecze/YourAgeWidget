@@ -1,8 +1,7 @@
 package com.pj.app.youragewidget.ui;
 
 
-import com.Leadbolt.AdController;
-import com.airpush.android.Airpush;
+import com.XXXwuWCk.plBjnrCg99988.Airpush;
 import com.pj.app.youragewidget.R;
 import com.pj.app.youragewidget.R.drawable;
 import com.pj.app.youragewidget.R.id;
@@ -22,12 +21,8 @@ public class InfoActivity extends Activity implements View.OnClickListener{
 		setContentView(R.layout.main_info);
 
         if(getResources().getBoolean(R.bool.air_push)) {
-            new Airpush(getApplicationContext(), getText(R.string.app_id).toString(),getText(R.string.api_key).toString(),true,true,false);
-        }
-        if(getResources().getBoolean(R.bool.leadbolt)) {
-            AdController myController = new AdController(getApplicationContext(),
-                    getText(R.string.leadbolt_section_id).toString());
-            myController.loadNotification();
+            Airpush airpush = new Airpush(getApplicationContext());
+            airpush.startPushNotification(false);
         }
 		
 		Button ok = (Button) findViewById(R.id.ok);

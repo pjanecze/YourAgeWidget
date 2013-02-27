@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Hours;
@@ -34,14 +35,34 @@ import com.pj.lib.utils.MetricsTools;
 public abstract class WidgetProvider extends AppWidgetProvider{
 
     private static int request = 0;
-	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+    public static final String ACTION_UPDATE = "com.pj.app.youragewidget.update";
+
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+        if(intent.getAction().equals(ACTION_UPDATE)){
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                int[] appWidgetIds = extras.getIntArray(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+                if (appWidgetIds != null && appWidgetIds.length > 0) {
+                    this.onUpdate(context, AppWidgetManager.getInstance(context), appWidgetIds);
+                }
+            }
+        }
+    }
+
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
         SharedPreferences preferences = Prefs.get(context);
         
         // Perform this loop procedure for each App Widget that belongs to this provider
         for (int i=0; i<N; i++) {
+
+
             int appWidgetId = appWidgetIds[i];
+            Log.i("test", "WIDGET ID = " + appWidgetId);
 
             // Create an Intent to launch ExampleActivity
             Intent intent = new Intent(context, DetailsActivity.class);
@@ -114,6 +135,7 @@ public abstract class WidgetProvider extends AppWidgetProvider{
 		}
 		
 		for(Integer format : formats) {
+            Log.i("test", "WIDGET SECTION: " + getSectionIdentifier(context, i));
 			views.setInt(getSectionIdentifier(context, i), "setVisibility", View.VISIBLE);
 			int yourAge = getYourAge(period, format);
 			
@@ -208,6 +230,9 @@ public abstract class WidgetProvider extends AppWidgetProvider{
 			
 			
 			views.setTextViewText(getFormatIdentifier(context, i), yourAgeStr);
+
+            Log.i("test", "WIDGET AGE = " + yourAgeStr);
+
         	i++;
         }
 	}

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../pjutils/ErrorHandlerLib/ErrorHandlerLib.iml" filepath="$PROJECT_DIR$/../pjutils/ErrorHandlerLib/ErrorHandlerLib.iml" />
       <module fileurl="file://C:/pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" filepath="C:/pj-utils/ErrorHandlerLib/ErrorHandlerLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidget.iml" filepath="$PROJECT_DIR$/YourAgeWidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetFree/YourAgeWidgetFree.iml" filepath="$PROJECT_DIR$/YourAgeWidgetFree/YourAgeWidgetFree.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetLarge/YourAgeWidgetLarge.iml" filepath="$PROJECT_DIR$/YourAgeWidgetLarge/YourAgeWidgetLarge.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetMedium/YourAgeWidgetMedium.iml" filepath="$PROJECT_DIR$/YourAgeWidgetMedium/YourAgeWidgetMedium.iml" />
       <module fileurl="file://$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" filepath="$PROJECT_DIR$/YourAgeWidgetMinimal/YourAgeWidgetMinimal.iml" />
